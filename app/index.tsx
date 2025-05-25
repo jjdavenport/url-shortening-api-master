@@ -12,18 +12,24 @@ import { ScrollView, View } from "react-native";
 
 export default function Index() {
   return (
-    <View>
-      <ScrollView>
-        <Header />
-        <Hero />
-        <Content />
-        <Input />
-        <Advanced />
-        <List />
-        <Links />
-        <Boost />
+    <ScrollView>
+      <View className="flex h-full min-h-screen">
+        <View className="font-poppins flex flex-1 gap-10 text-lg">
+          <Header />
+          <Hero />
+          <Content />
+          <Input />
+          <View>
+            <View className="bg-gray flex gap-10 pt-20">
+              <Advanced />
+              <List />
+            </View>
+            <Boost />
+            <Links />
+          </View>
+        </View>
         <Footer />
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
