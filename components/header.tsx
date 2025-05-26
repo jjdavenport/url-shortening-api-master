@@ -12,13 +12,13 @@ type Props = {
 const Header = ({ setOpenMenu, openMenu }: Props) => {
   return (
     <>
-      <View className="flex flex-row justify-between p-4">
+      <View className="flex flex-row items-center justify-between p-6">
         <Logo />
         <AriaButton
           onPress={() => setOpenMenu(!openMenu)}
           className="w-fit outline-none"
         >
-          <Menu />
+          <Menu className="h-7 w-7 stroke-gray" />
         </AriaButton>
       </View>
       {openMenu && <MobileMenu />}

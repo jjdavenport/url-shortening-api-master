@@ -4,8 +4,8 @@ import { Text, View } from "react-native";
 const Footer = () => {
   return (
     <>
-      <View className="bg-veryDarkBlue flex items-center">
-        <Text className="flex gap-1 text-xs text-white">
+      <View className="flex items-center bg-veryDarkBlue">
+        <Text className="flex gap-1 font-poppins text-xs text-white">
           Challenge by
           <Link
             className="underline"

@@ -10,24 +10,30 @@ const Links = () => {
     <>
       <View className="flex items-center gap-6 bg-veryDarkBlue p-4">
         <Logo fill="#FFFFFF" />
-        <Text className="text-center text-white">Features</Text>
+        <Text className="text-center font-poppins text-white">Features</Text>
         <View className="flex gap-1">
-          <Text className="text-center text-white">Link Shortening</Text>
-          <Text className="text-center text-white">Branded Links</Text>
-          <Text className="text-center text-white">Analytics</Text>
+          <Text className="text-center font-poppins text-white">
+            Link Shortening
+          </Text>
+          <Text className="text-center font-poppins text-white">
+            Branded Links
+          </Text>
+          <Text className="text-center font-poppins text-white">Analytics</Text>
         </View>
-        <Text className="text-center text-white">Resources</Text>
+        <Text className="text-center font-poppins text-white">Resources</Text>
         <View className="flex gap-1">
-          <Text className="text-center text-white">Blog</Text>
-          <Text className="text-center text-white">Developers</Text>
-          <Text className="text-center text-white">Support</Text>
+          <Text className="text-center font-poppins text-white">Blog</Text>
+          <Text className="text-center font-poppins text-white">
+            Developers
+          </Text>
+          <Text className="text-center font-poppins text-white">Support</Text>
         </View>
         <Text className="text-center text-white">Company</Text>
         <View className="flex gap-1">
-          <Text className="text-center text-white">About</Text>
-          <Text className="text-center text-white">Our Team</Text>
-          <Text className="text-center text-white">Careers</Text>
-          <Text className="text-center text-white">Contact</Text>
+          <Text className="text-center font-poppins text-white">About</Text>
+          <Text className="text-center font-poppins text-white">Our Team</Text>
+          <Text className="text-center font-poppins text-white">Careers</Text>
+          <Text className="text-center font-poppins text-white">Contact</Text>
         </View>
         <View className="flex flex-row items-center gap-4">
           <Facebook />

@@ -16,13 +16,13 @@ export default function Index() {
   return (
     <ScrollView scrollEnabled={!openMenu}>
       <View className="flex h-full min-h-screen">
-        <View className="flex flex-1 gap-10 font-poppins text-lg">
+        <View className="flex flex-1 text-lg">
           <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
           <Hero />
           <Content />
           <Input />
           <View>
-            <View className="flex gap-10 bg-gray pt-20">
+            <View className="flex gap-10 bg-gray pt-28">
               <Advanced />
               <List />
             </View>
