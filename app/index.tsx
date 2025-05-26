@@ -8,19 +8,21 @@ import Input from "@/components/input";
 import Links from "@/components/links";
 import List from "@/components/list";
 import "@/global.css";
+import { useState } from "react";
 import { ScrollView, View } from "react-native";
 
 export default function Index() {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
-    <ScrollView>
+    <ScrollView scrollEnabled={!openMenu}>
       <View className="flex h-full min-h-screen">
-        <View className="font-poppins flex flex-1 gap-10 text-lg">
-          <Header />
+        <View className="flex flex-1 gap-10 font-poppins text-lg">
+          <Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
           <Hero />
           <Content />
           <Input />
           <View>
-            <View className="bg-gray flex gap-10 pt-20">
+            <View className="flex gap-10 bg-gray pt-20">
               <Advanced />
               <List />
             </View>
