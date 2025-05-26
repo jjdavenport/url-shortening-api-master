@@ -1,10 +1,9 @@
-import { Image } from "react-native";
-const illustration = require("@/assets/images/illustration-working.svg");
+import Illustration from "@/assets/images/illustration-working.svg";
 
 const Hero = () => {
   return (
     <>
-      <Image source={illustration} />
+      <Illustration />
     </>
   );
 };
