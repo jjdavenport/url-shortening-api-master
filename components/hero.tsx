@@ -4,10 +4,9 @@ import { View } from "react-native";
 const Hero = () => {
   return (
     <>
-      <View className="flex h-96 items-end">
+      <View className="flex h-96 items-end md:w-1/2">
         <Illustration
-          width="90%"
-          height="100%"
+          className="h-[100%] w-[90%] md:w-[100%]"
           viewBox="0 0 500 500"
           preserveAspectRatio="xMidYMid meet"
         />

@@ -3,7 +3,7 @@ import { View } from "react-native";
 const Divide = () => {
   return (
     <>
-      <View className="bg-cyan h-20 w-2"></View>
+      <View className="h-20 w-2 bg-cyan md:h-2 md:w-10"></View>
     </>
   );
 };

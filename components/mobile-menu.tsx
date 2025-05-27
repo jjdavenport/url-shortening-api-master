@@ -4,7 +4,7 @@ const MobileMenu = () => {
   return (
     <>
       <View className="fixed top-20 z-10 flex w-full items-center">
-        <View className="flex w-11/12 items-center gap-4 rounded-lg bg-darkViolet p-4">
+        <View className="z-10 flex w-11/12 items-center gap-4 rounded-lg bg-darkViolet p-4">
           <Text className="font-poppins text-lg text-white">Features</Text>
           <Text className="font-poppins text-lg text-white">Pricing</Text>
           <Text className="font-poppins text-lg text-white">Resources</Text>

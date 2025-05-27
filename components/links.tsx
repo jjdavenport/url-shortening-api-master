@@ -8,32 +8,56 @@ import { Text, View } from "react-native";
 const Links = () => {
   return (
     <>
-      <View className="flex items-center gap-6 bg-veryDarkBlue p-4">
+      <View className="flex items-center gap-6 bg-veryDarkViolet p-4 pt-10 md:flex-row md:items-start md:justify-between">
         <Logo fill="#FFFFFF" />
-        <Text className="text-center font-poppins text-white">Features</Text>
-        <View className="flex gap-1">
-          <Text className="text-center font-poppins text-white">
-            Link Shortening
+        <View className="flex flex-col gap-4 md:gap-6">
+          <Text className="text-center font-poppins text-white md:text-left">
+            Features
           </Text>
-          <Text className="text-center font-poppins text-white">
-            Branded Links
-          </Text>
-          <Text className="text-center font-poppins text-white">Analytics</Text>
+          <View className="flex gap-1">
+            <Text className="text-center font-poppins text-white md:text-left">
+              Link Shortening
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Branded Links
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Analytics
+            </Text>
+          </View>
         </View>
-        <Text className="text-center font-poppins text-white">Resources</Text>
-        <View className="flex gap-1">
-          <Text className="text-center font-poppins text-white">Blog</Text>
-          <Text className="text-center font-poppins text-white">
-            Developers
+        <View className="flex flex-col gap-4 md:gap-6">
+          <Text className="text-center font-poppins text-white md:text-left">
+            Resources
           </Text>
-          <Text className="text-center font-poppins text-white">Support</Text>
+          <View className="flex gap-1">
+            <Text className="text-center font-poppins text-white md:text-left">
+              Blog
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Developers
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Support
+            </Text>
+          </View>
         </View>
-        <Text className="text-center text-white">Company</Text>
-        <View className="flex gap-1">
-          <Text className="text-center font-poppins text-white">About</Text>
-          <Text className="text-center font-poppins text-white">Our Team</Text>
-          <Text className="text-center font-poppins text-white">Careers</Text>
-          <Text className="text-center font-poppins text-white">Contact</Text>
+        <View className="flex flex-col gap-4 md:gap-6">
+          <Text className="text-center text-white md:text-left">Company</Text>
+          <View className="flex gap-1">
+            <Text className="text-center font-poppins text-white md:text-left">
+              About
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Our Team
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Careers
+            </Text>
+            <Text className="text-center font-poppins text-white md:text-left">
+              Contact
+            </Text>
+          </View>
         </View>
         <View className="flex flex-row items-center gap-4">
           <Facebook />

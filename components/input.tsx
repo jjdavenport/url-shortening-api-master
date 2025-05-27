@@ -1,17 +1,17 @@
-import { TextInput, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import AriaButton from "./aria-button";
 
 const Input = () => {
   return (
     <>
       <View className="z-10 flex items-center bg-transparent">
-        <View className="-mb-16 flex w-11/12 gap-4 rounded-md bg-darkViolet p-4">
+        <View className="-mb-16 flex w-11/12 gap-4 rounded-lg bg-darkViolet p-5 md:flex-row md:p-8">
           <TextInput
-            className="rounded-md bg-white p-3 font-poppins"
+            className="w-full rounded-md bg-white p-3 font-poppins"
             placeholder="Shorten a link here..."
           />
-          <AriaButton className="rounded-md bg-cyan p-2 font-poppins text-white">
-            Shorten It!
+          <AriaButton className="flex items-center justify-center rounded-md bg-cyan p-2 md:w-40 md:p-0">
+            <Text className="font-poppins text-white">Shorten It!</Text>
           </AriaButton>
         </View>
       </View>

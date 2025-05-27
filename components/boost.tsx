@@ -1,14 +1,26 @@
+import DesktopBoost from "@/assets/images/bg-boost-desktop.svg";
 import MobileBoost from "@/assets/images/bg-boost-mobile.svg";
 import { Text, View } from "react-native";
 
-const Boost = () => {
+type Prop = {
+  tablet: boolean;
+};
+
+const Boost = ({ tablet }: Prop) => {
   return (
     <>
-      <View className="relative flex h-[300px] items-center justify-center gap-4 bg-darkViolet bg-cover bg-center">
-        <MobileBoost
-          preserveAspectRatio="xMidYMid meet"
-          className="absolute top-0"
-        />
+      <View className="relative flex h-[300px] items-center justify-center gap-4 bg-darkViolet bg-cover bg-center md:h-[250px]">
+        {tablet ? (
+          <DesktopBoost
+            preserveAspectRatio="xMidYMid meet"
+            className="absolute top-0"
+          />
+        ) : (
+          <MobileBoost
+            preserveAspectRatio="xMidYMid meet"
+            className="absolute top-0"
+          />
+        )}
         <Text className="text-center font-poppins text-2xl text-white">
           Boost your links today
         </Text>
