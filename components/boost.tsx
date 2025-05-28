@@ -24,9 +24,11 @@ const Boost = ({ tablet }: Prop) => {
         <Text className="text-center font-poppins text-3xl font-bold text-white">
           Boost your links today
         </Text>
-        <Text className="w-fit rounded-full bg-cyan px-10 py-3 text-center font-poppins text-xl font-medium text-white">
-          Get Started
-        </Text>
+        <View className="rounded-full bg-white">
+          <Text className="w-fit cursor-pointer rounded-full bg-cyan px-10 py-3 text-center font-poppins text-xl font-medium text-white transition-opacity duration-300 ease-in-out hover:opacity-60">
+            Get Started
+          </Text>
+        </View>
       </View>
     </>
   );

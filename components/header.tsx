@@ -14,17 +14,25 @@ const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
   if (tablet) {
     return (
       <View className="flex w-full max-w-screen-xl flex-row items-center justify-between p-6">
-        <View className="flex flex-row items-center gap-8">
+        <View className="flex flex-row items-center gap-10">
           <Logo />
-          <View className="flex flex-row gap-4">
-            <Text className="font-poppins">Features</Text>
-            <Text className="font-poppins">Pricing</Text>
-            <Text className="font-poppins">Resources</Text>
+          <View className="flex flex-row gap-6">
+            <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+              Features
+            </Text>
+            <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+              Pricing
+            </Text>
+            <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+              Resources
+            </Text>
           </View>
         </View>
-        <View className="flex flex-row items-center gap-4">
-          <Text className="font-poppins">Login</Text>
-          <Text className="rounded-full bg-cyan px-6 py-2 font-poppins text-white">
+        <View className="flex flex-row items-center gap-6">
+          <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+            Login
+          </Text>
+          <Text className="cursor-pointer rounded-full bg-cyan px-6 py-2 font-poppins text-white transition-opacity duration-300 ease-in-out hover:opacity-60">
             Sign Up
           </Text>
         </View>
