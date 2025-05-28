@@ -7,12 +7,15 @@ import Hero from "@/components/hero";
 import Input from "@/components/input";
 import Links from "@/components/links";
 import List from "@/components/list";
+import UrlList from "@/components/urls-list";
 import "@/global.css";
+import useAPI from "@/hooks/api-context";
 import { useState } from "react";
 import { ScrollView, View } from "react-native";
 import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
+  const { input, setInput, fetchData, urls } = useAPI();
   const [openMenu, setOpenMenu] = useState(false);
   const tablet = useMediaQuery({ minWidth: 768 });
 
@@ -28,9 +31,10 @@ export default function Index() {
                 <Hero />
               </View>
             </View>
-            <Input />
+            <Input onPress={fetchData} input={input} setInput={setInput} />
             <View className="w-full">
-              <View className="bg-lightGray flex items-center gap-10 pt-28">
+              <View className="flex items-center gap-10 bg-lightGray pt-20">
+                <UrlList data={urls} />
                 <Advanced />
                 <List />
               </View>
@@ -55,9 +59,10 @@ export default function Index() {
           />
           <Hero />
           <Content />
-          <Input />
+          <Input onPress={fetchData} input={input} setInput={setInput} />
           <View>
-            <View className="bg-lightGray flex gap-10 pb-10 pt-28">
+            <View className="flex gap-10 bg-lightGray pb-10 pt-28">
+              <UrlList data={urls} />
               <Advanced />
               <List />
             </View>
