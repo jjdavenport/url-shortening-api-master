@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <View className="flex items-center bg-veryDarkViolet">
-        <Text className="flex gap-1 font-poppins text-xs text-white">
+        <Text className="flex gap-1 font-poppins text-xs text-gray">
           Challenge by
           <Link
             className="underline"

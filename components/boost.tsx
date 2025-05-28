@@ -21,10 +21,10 @@ const Boost = ({ tablet }: Prop) => {
             className="absolute top-0"
           />
         )}
-        <Text className="text-center font-poppins text-2xl text-white">
+        <Text className="text-center font-poppins text-3xl font-bold text-white">
           Boost your links today
         </Text>
-        <Text className="w-fit rounded-full bg-cyan px-6 py-2 text-center font-poppins text-xl text-white">
+        <Text className="w-fit rounded-full bg-cyan px-10 py-3 text-center font-poppins text-xl font-medium text-white">
           Get Started
         </Text>
       </View>

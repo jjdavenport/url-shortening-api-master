@@ -11,50 +11,52 @@ const Links = () => {
       <View className="flex items-center gap-6 bg-veryDarkViolet p-4 pt-10 md:flex-row md:items-start md:justify-between">
         <Logo fill="#FFFFFF" />
         <View className="flex flex-col gap-4 md:gap-6">
-          <Text className="text-center font-poppins text-white md:text-left">
+          <Text className="text-center font-poppins font-bold text-white md:text-left">
             Features
           </Text>
           <View className="flex gap-1">
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Link Shortening
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Branded Links
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Analytics
             </Text>
           </View>
         </View>
         <View className="flex flex-col gap-4 md:gap-6">
-          <Text className="text-center font-poppins text-white md:text-left">
+          <Text className="text-center font-poppins font-bold text-white md:text-left">
             Resources
           </Text>
           <View className="flex gap-1">
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Blog
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Developers
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Support
             </Text>
           </View>
         </View>
         <View className="flex flex-col gap-4 md:gap-6">
-          <Text className="text-center text-white md:text-left">Company</Text>
+          <Text className="text-center font-bold text-white md:text-left">
+            Company
+          </Text>
           <View className="flex gap-1">
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               About
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Our Team
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Careers
             </Text>
-            <Text className="text-center font-poppins text-white md:text-left">
+            <Text className="text-center font-poppins font-medium text-gray md:text-left">
               Contact
             </Text>
           </View>

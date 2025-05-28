@@ -13,7 +13,7 @@ type Props = {
 const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
   if (tablet) {
     return (
-      <View className="flex flex-row items-center justify-between p-6">
+      <View className="flex w-full max-w-screen-xl flex-row items-center justify-between p-6">
         <View className="flex flex-row items-center gap-8">
           <Logo />
           <View className="flex flex-row gap-4">

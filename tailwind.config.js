@@ -12,6 +12,7 @@ module.exports = {
         poppins: ["poppins"],
       },
       colors: {
+        lightGray: "hsl(230, 25%, 95%)",
         cyan: "hsl(180, 66%, 49%)",
         darkViolet: "hsl(257, 27%, 26%)",
         red: "hsl(0, 87%, 67%)",

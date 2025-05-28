@@ -20,15 +20,17 @@ export default function Index() {
     return (
       <ScrollView>
         <View className="flex h-full min-h-screen">
-          <View className="flex flex-1 text-lg">
+          <View className="flex flex-1 items-center gap-10 text-lg">
             <Header tablet={tablet} />
-            <View className="flex flex-row items-center">
-              <Content />
-              <Hero />
+            <View className="flex w-full items-end">
+              <View className="flex w-full max-w-[90rem] flex-row items-center justify-between">
+                <Content />
+                <Hero />
+              </View>
             </View>
             <Input />
-            <View>
-              <View className="flex gap-10 bg-gray pt-28">
+            <View className="w-full">
+              <View className="bg-lightGray flex items-center gap-10 pt-28">
                 <Advanced />
                 <List />
               </View>
@@ -55,7 +57,7 @@ export default function Index() {
           <Content />
           <Input />
           <View>
-            <View className="flex gap-10 bg-gray pt-28">
+            <View className="bg-lightGray flex gap-10 pb-10 pt-28">
               <Advanced />
               <List />
             </View>
