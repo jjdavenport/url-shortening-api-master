@@ -18,7 +18,7 @@ const List = () => {
           />
           <Divide />
           <ListItem
-            className="md:mt-10"
+            className="md:mt-16"
             svg={<Detail />}
             title="Detailed Records"
             subTitle="Gain insights into who is clicking your links. Knowing when and where 
@@ -26,7 +26,7 @@ const List = () => {
           />
           <Divide />
           <ListItem
-            className="md:mt-20"
+            className="md:mt-32"
             svg={<Fully />}
             title="Fully Customizable"
             subTitle="Improve brand awareness and content discoverability through customizable 

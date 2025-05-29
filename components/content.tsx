@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 const Content = () => {
   return (
     <>
-      <View className="flex items-center gap-4 px-4 pb-20 md:w-fit md:items-start md:px-0 md:pb-0 md:pl-20">
+      <View className="flex items-center gap-4 px-4 pb-20 md:w-1/2 md:items-start md:px-0 md:pb-0">
         <Text className="w-96 text-center font-poppins text-4xl font-bold text-veryDarkBlue md:text-left md:text-5xl">
           More than just shorter links
         </Text>

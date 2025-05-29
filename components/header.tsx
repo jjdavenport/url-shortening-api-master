@@ -13,28 +13,30 @@ type Props = {
 const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
   if (tablet) {
     return (
-      <View className="flex w-full max-w-screen-xl flex-row items-center justify-between p-6">
-        <View className="flex flex-row items-center gap-10">
-          <Logo />
-          <View className="flex flex-row gap-6">
+      <View className="flex w-full items-center">
+        <View className="flex w-11/12 max-w-screen-xl flex-row items-center justify-between py-10">
+          <View className="flex flex-row items-center gap-10">
+            <Logo />
+            <View className="flex flex-row gap-6">
+              <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+                Features
+              </Text>
+              <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+                Pricing
+              </Text>
+              <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
+                Resources
+              </Text>
+            </View>
+          </View>
+          <View className="flex flex-row items-center gap-6">
             <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
-              Features
+              Login
             </Text>
-            <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
-              Pricing
-            </Text>
-            <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
-              Resources
+            <Text className="cursor-pointer rounded-full bg-cyan px-6 py-2 font-poppins text-white transition-opacity duration-300 ease-in-out hover:opacity-60">
+              Sign Up
             </Text>
           </View>
-        </View>
-        <View className="flex flex-row items-center gap-6">
-          <Text className="cursor-pointer font-poppins font-medium text-grayishViolet hover:text-veryDarkViolet">
-            Login
-          </Text>
-          <Text className="cursor-pointer rounded-full bg-cyan px-6 py-2 font-poppins text-white transition-opacity duration-300 ease-in-out hover:opacity-60">
-            Sign Up
-          </Text>
         </View>
       </View>
     );

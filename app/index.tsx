@@ -25,15 +25,15 @@ export default function Index() {
         <View className="flex h-full min-h-screen">
           <View className="flex flex-1 items-center gap-10 text-lg">
             <Header tablet={tablet} />
-            <View className="flex w-full items-end">
-              <View className="flex w-full max-w-[90rem] flex-row items-center justify-between">
+            <View className="flex w-full items-center">
+              <View className="flex w-11/12 max-w-screen-xl flex-row items-center justify-between">
                 <Content />
-                <Hero />
+                <Hero tablet={tablet} />
               </View>
             </View>
             <Input onPress={fetchData} input={input} setInput={setInput} />
             <View className="w-full">
-              <View className="flex items-center gap-10 bg-lightGray pt-20">
+              <View className="flex items-center gap-10 bg-lightGray py-20">
                 <UrlList data={urls} />
                 <Advanced />
                 <List />
@@ -57,7 +57,7 @@ export default function Index() {
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}
           />
-          <Hero />
+          <Hero tablet={tablet} />
           <Content />
           <Input onPress={fetchData} input={input} setInput={setInput} />
           <View>
