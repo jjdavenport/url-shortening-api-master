@@ -9,7 +9,7 @@ const Links = () => {
   return (
     <>
       <View className="flex w-full items-center bg-veryDarkViolet">
-        <View className="flex w-full max-w-screen-xl items-center gap-6 p-4 pt-10 md:flex-row md:items-start md:justify-between md:pt-16">
+        <View className="flex w-full max-w-screen-lg items-center gap-6 p-4 py-10 md:flex-row md:items-start md:justify-between md:pt-16">
           <Logo className="fill-white" />
           <View className="flex flex-col gap-4 md:gap-6">
             <Text className="text-center font-poppins font-bold text-white md:text-left">

@@ -8,8 +8,8 @@ import ListItem from "./list-item";
 const List = () => {
   return (
     <>
-      <View className="max-w-screen-xl">
-        <View className="flex flex-col items-center p-4 md:flex-row">
+      <View className="flex max-w-screen-lg items-center">
+        <View className="flex flex-col items-center p-4 md:w-11/12 md:p-0 xl:w-full xl:flex-row">
           <ListItem
             svg={<Brand />}
             title="Brand Recognition"
@@ -18,7 +18,7 @@ const List = () => {
           />
           <Divide />
           <ListItem
-            className="md:mt-16"
+            className="xl:mt-20"
             svg={<Detail />}
             title="Detailed Records"
             subTitle="Gain insights into who is clicking your links. Knowing when and where 
@@ -26,7 +26,7 @@ const List = () => {
           />
           <Divide />
           <ListItem
-            className="md:mt-32"
+            className="xl:mt-40"
             svg={<Fully />}
             title="Fully Customizable"
             subTitle="Improve brand awareness and content discoverability through customizable 

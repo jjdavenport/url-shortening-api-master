@@ -26,14 +26,19 @@ export default function Index() {
           <View className="flex flex-1 items-center gap-10 text-lg">
             <Header tablet={tablet} />
             <View className="flex w-full items-center">
-              <View className="flex w-11/12 max-w-screen-xl flex-row items-center justify-between">
+              <View className="flex w-11/12 max-w-screen-lg flex-row items-center justify-between gap-16">
                 <Content />
                 <Hero tablet={tablet} />
               </View>
             </View>
-            <Input onPress={fetchData} input={input} setInput={setInput} />
+            <Input
+              tablet={tablet}
+              onPress={fetchData}
+              input={input}
+              setInput={setInput}
+            />
             <View className="w-full">
-              <View className="flex items-center gap-10 bg-lightGray py-20">
+              <View className="flex items-center gap-10 bg-lightGray pb-40 pt-20 md:gap-16">
                 <UrlList data={urls} />
                 <Advanced />
                 <List />
@@ -59,7 +64,12 @@ export default function Index() {
           />
           <Hero tablet={tablet} />
           <Content />
-          <Input onPress={fetchData} input={input} setInput={setInput} />
+          <Input
+            tablet={tablet}
+            onPress={fetchData}
+            input={input}
+            setInput={setInput}
+          />
           <View>
             <View className="flex gap-10 bg-lightGray pb-10 pt-28">
               <UrlList data={urls} />

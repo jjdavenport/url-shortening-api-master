@@ -9,7 +9,9 @@ const useAPI = () => {
     },
   ]);
 
-  const fetchData = () => {};
+  const fetchData = (url) => {
+    setUrls(() => setUrls((prev) => ({ ...prev, fullUrl: url })));
+  };
 
   return {
     input,
