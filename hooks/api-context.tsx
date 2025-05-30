@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const useAPI = () => {
   const [input, setInput] = useState("");
-  const [urls, setUrls] = useState([
-    {
-      fullUrl: "",
-      shortUrl: "",
-    },
-  ]);
+  const [urls, setUrls] = useState([]);
+  const [error, setError] = useState({
+    state: false,
+    message: "Cannot be empty",
+  });
 
-  const fetchData = (url) => {
-    setUrls(() => setUrls((prev) => ({ ...prev, fullUrl: url })));
+  const fetchData = () => {
+    setUrls((prev) => [...prev, { shortUrl: "", longUrl: input }]);
   };
+
+  useEffect(() => {
+    console.log(urls);
+  }, [urls]);
 
   return {
     input,
     setInput,
     fetchData,
     urls,
+    error,
   };
 };
 

@@ -10,7 +10,7 @@ const UrlsList = ({ data }: Prop) => {
     <>
       <View className="flex w-full gap-4">
         {data.map((i, index) => (
-          <Url key={index} fullUrl={i.fullUrl} shortUrl={i.shortUrl} />
+          <Url key={index} longUrl={i.longUrl} shortUrl={i.shortUrl} />
         ))}
       </View>
     </>
