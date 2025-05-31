@@ -16,7 +16,7 @@ import { ScrollView, View } from "react-native";
 import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
-  const { input, setInput, fetchData, urls, error } = useAPI();
+  const { input, setInput, handlePress, urls, error } = useAPI();
   const [openMenu, setOpenMenu] = useState(false);
   const tablet = useMediaQuery({ minWidth: 768 });
 
@@ -40,7 +40,7 @@ export default function Index() {
               <Input
                 error={error}
                 tablet={tablet}
-                onPress={fetchData}
+                onPress={handlePress}
                 input={input}
                 setInput={setInput}
               />
@@ -80,7 +80,7 @@ export default function Index() {
             <Input
               error={error}
               tablet={tablet}
-              onPress={fetchData}
+              onPress={handlePress}
               input={input}
               setInput={setInput}
             />
