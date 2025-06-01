@@ -16,7 +16,7 @@ import { ScrollView, View } from "react-native";
 import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
-  const { input, setInput, handlePress, urls, error } = useAPI();
+  const { input, setInput, handlePress, handleBlur, urls, error } = useAPI();
   const [openMenu, setOpenMenu] = useState(false);
   const tablet = useMediaQuery({ minWidth: 768 });
 
@@ -43,6 +43,7 @@ export default function Index() {
                 onPress={handlePress}
                 input={input}
                 setInput={setInput}
+                onBlur={handleBlur}
               />
               <View className="w-full">
                 <View className="flex items-center gap-10 bg-lightGray pb-40 pt-20 md:gap-16">
@@ -83,6 +84,7 @@ export default function Index() {
               onPress={handlePress}
               input={input}
               setInput={setInput}
+              onBlur={handleBlur}
             />
             <View>
               <View className="flex gap-10 bg-lightGray pb-10 pt-28">

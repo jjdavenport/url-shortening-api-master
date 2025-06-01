@@ -1,4 +1,5 @@
 import Clipboard from "@react-native-clipboard/clipboard";
+import { Link } from "expo-router";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import AriaButton from "./aria-button";
@@ -27,9 +28,13 @@ const Url = ({ longUrl, shortUrl }: Props) => {
             {longUrl}
           </Text>
           <View className="flex gap-2 px-4 py-2 pb-4 md:flex-row md:items-center md:gap-4 md:p-4">
-            <Text className="font-poppins text-lg font-medium text-cyan">
+            <Link
+              target="__blank"
+              href={shortUrl}
+              className="font-poppins text-lg font-medium text-cyan hover:underline"
+            >
               {shortUrl}
-            </Text>
+            </Link>
             <AriaButton
               className={`${button === "Copy" ? "bg-cyan hover:opacity-60" : "bg-darkViolet"} rounded-md py-2 font-poppins text-lg font-bold text-white transition-all duration-75 ease-in-out md:w-36`}
               onPress={copy}

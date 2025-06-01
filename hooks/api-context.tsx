@@ -8,6 +8,25 @@ const useAPI = () => {
     message: "Cannot be empty",
   });
 
+  const handleBlur = () => {
+    if (input === "") {
+      console.log(input);
+      setError((prev) => ({
+        ...prev,
+        state: true,
+        message: "Please add a link",
+      }));
+    } else if (
+      !input.match(
+        /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/,
+      )
+    ) {
+      setError((prev) => ({ ...prev, state: true, message: "Invalid URL" }));
+    } else {
+      setError((prev) => ({ ...prev, state: false, message: "" }));
+    }
+  };
+
   const handlePress = () => {
     if (input === "") {
       console.log(input);
@@ -16,7 +35,14 @@ const useAPI = () => {
         state: true,
         message: "Please add a link",
       }));
+    } else if (
+      !input.match(
+        /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/,
+      )
+    ) {
+      setError((prev) => ({ ...prev, state: true, message: "Invalid URL" }));
     } else {
+      setError((prev) => ({ ...prev, state: false, message: "" }));
       setInput("");
       fetchData(input);
     }
@@ -37,7 +63,11 @@ const useAPI = () => {
         { shortUrl: result.shorturl, longUrl: input },
       ]);
     } catch {
-      setError((prev) => ({ ...prev, state: true, message: "Failed" }));
+      setError((prev) => ({
+        ...prev,
+        state: true,
+        message: "Failed to fetch",
+      }));
     }
   };
 
@@ -49,6 +79,7 @@ const useAPI = () => {
     input,
     setInput,
     handlePress,
+    handleBlur,
     urls,
     error,
   };
