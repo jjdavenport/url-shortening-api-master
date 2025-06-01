@@ -12,13 +12,15 @@ import "@/global.css";
 import useAPI from "@/hooks/api-context";
 import Head from "expo-router/head";
 import { useState } from "react";
-import { ScrollView, View } from "react-native";
-import { useMediaQuery } from "react-responsive";
+import { ScrollView, View, useWindowDimensions } from "react-native";
 
 export default function Index() {
   const { input, setInput, handlePress, handleBlur, urls, error } = useAPI();
   const [openMenu, setOpenMenu] = useState(false);
-  const tablet = useMediaQuery({ minWidth: 768 });
+  const { width } = useWindowDimensions();
+  const tablet = width >= 768;
+
+  if (!width) return null;
 
   if (tablet) {
     return (

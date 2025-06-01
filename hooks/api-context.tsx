@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const useAPI = () => {
   const [input, setInput] = useState("");
@@ -70,10 +70,6 @@ const useAPI = () => {
       }));
     }
   };
-
-  useEffect(() => {
-    console.log(urls);
-  }, [urls]);
 
   return {
     input,
