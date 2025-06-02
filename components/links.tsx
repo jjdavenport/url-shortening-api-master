@@ -65,10 +65,22 @@ const Links = () => {
             </View>
           </View>
           <View className="flex flex-row items-center gap-4">
-            <Facebook className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan" />
-            <Twitter className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan" />
-            <Pinterest className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan" />
-            <Instagram className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan" />
+            <Facebook
+              testID="link-img"
+              className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan"
+            />
+            <Twitter
+              testID="link-img"
+              className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan"
+            />
+            <Pinterest
+              testID="link-img"
+              className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan"
+            />
+            <Instagram
+              testID="link-img"
+              className="cursor-pointer fill-white transition-all duration-300 ease-in-out hover:fill-cyan"
+            />
           </View>
         </View>
       </View>
