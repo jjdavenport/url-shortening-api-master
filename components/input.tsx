@@ -20,17 +20,10 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
       <>
         <View className="z-10 flex w-full items-center bg-transparent">
           <View className="relative -mb-24 flex w-11/12 gap-2 overflow-hidden rounded-lg bg-darkViolet p-10 md:max-w-screen-lg">
-            {tablet ? (
-              <DesktopShorten
-                preserveAspectRatio="xMidYMid meet"
-                className="absolute left-0 top-0"
-              />
-            ) : (
-              <MobileShorten
-                preserveAspectRatio="xMidYMid meet"
-                className="absolute right-0 top-0"
-              />
-            )}
+            <DesktopShorten
+              preserveAspectRatio="xMidYMid meet"
+              className="absolute left-0 top-0"
+            />
             <View className="flex flex-row gap-4">
               <TextInput
                 onBlur={onBlur}
@@ -65,17 +58,10 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
     <>
       <View className="z-10 flex w-full items-center bg-transparent">
         <View className="relative -mb-20 flex w-11/12 gap-4 overflow-hidden rounded-lg bg-darkViolet p-5">
-          {tablet ? (
-            <DesktopShorten
-              preserveAspectRatio="xMidYMid meet"
-              className="absolute left-0 top-0"
-            />
-          ) : (
-            <MobileShorten
-              preserveAspectRatio="xMidYMid meet"
-              className="absolute right-0 top-0"
-            />
-          )}
+          <MobileShorten
+            preserveAspectRatio="xMidYMid meet"
+            className="absolute right-0 top-0"
+          />
           <View className="flex gap-2">
             <TextInput
               onBlur={onBlur}

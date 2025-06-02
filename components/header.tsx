@@ -15,7 +15,7 @@ const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
       <View className="flex w-full items-center">
         <View className="flex w-11/12 max-w-screen-lg flex-row items-center justify-between py-10">
           <View className="flex flex-row items-center gap-10">
-            <Logo />
+            <Logo className="fill-veryDarkViolet" />
             <View className="flex flex-row gap-6">
               <Text className="cursor-pointer font-poppins font-bold text-grayishViolet hover:text-veryDarkViolet">
                 Features
@@ -44,7 +44,7 @@ const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
   return (
     <>
       <View className="flex flex-row items-center justify-between p-6">
-        <Logo />
+        <Logo className="fill-veryDarkViolet" />
         <AriaButton
           onPress={() => setOpenMenu(!openMenu)}
           className="w-fit outline-none"
