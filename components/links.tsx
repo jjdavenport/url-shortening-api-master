@@ -1,8 +1,10 @@
-import Facebook from "@/assets/images/icon-facebook.svg";
-import Instagram from "@/assets/images/icon-instagram.svg";
-import Pinterest from "@/assets/images/icon-pinterest.svg";
-import Twitter from "@/assets/images/icon-twitter.svg";
-import Logo from "@/assets/images/logo.svg";
+import {
+  Facebook,
+  Instagram,
+  Logo,
+  Pinterest,
+  Twitter,
+} from "@/components/svgs/images";
 import { Text, View } from "react-native";
 
 const Links = () => {

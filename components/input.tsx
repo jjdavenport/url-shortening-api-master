@@ -1,5 +1,4 @@
-import DesktopShorten from "@/assets/images/bg-shorten-desktop.svg";
-import MobileShorten from "@/assets/images/bg-shorten-mobile.svg";
+import { DesktopShorten, MobileShorten } from "@/components/svgs/images";
 import { Text, TextInput, View } from "react-native";
 import AriaButton from "./aria-button";
 

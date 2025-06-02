@@ -1,6 +1,4 @@
-import Brand from "@/assets/images/icon-brand-recognition.svg";
-import Detail from "@/assets/images/icon-detailed-records.svg";
-import Fully from "@/assets/images/icon-fully-customizable.svg";
+import { Brand, Detail, Fully } from "@/components/svgs/images";
 import { View } from "react-native";
 import Divide from "./divide";
 import ListItem from "./list-item";

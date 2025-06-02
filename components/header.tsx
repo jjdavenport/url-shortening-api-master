@@ -1,5 +1,4 @@
-import Menu from "@/assets/images/icon-menu.svg";
-import Logo from "@/assets/images/logo.svg";
+import { Logo, Menu } from "@/components/svgs/images";
 import { Text, View } from "react-native";
 import AriaButton from "./aria-button";
 import MobileMenu from "./mobile-menu";

@@ -1,4 +1,4 @@
-import Illustration from "@/assets/images/illustration-working.svg";
+import { Illustration } from "@/components/svgs/images";
 import { View } from "react-native";
 
 type Prop = {

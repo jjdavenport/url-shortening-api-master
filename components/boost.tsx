@@ -1,5 +1,5 @@
-import DesktopBoost from "@/assets/images/bg-boost-desktop.svg";
-import MobileBoost from "@/assets/images/bg-boost-mobile.svg";
+import { DesktopBoost, MobileBoost } from "@/components/svgs/images";
+
 import { Text, View } from "react-native";
 
 type Prop = {
