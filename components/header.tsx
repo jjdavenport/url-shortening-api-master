@@ -46,6 +46,7 @@ const Header = ({ setOpenMenu, openMenu, tablet }: Props) => {
       <View className="flex flex-row items-center justify-between p-6">
         <Logo className="fill-veryDarkViolet" />
         <AriaButton
+          testID="header-button"
           onPress={() => setOpenMenu(!openMenu)}
           className="w-fit outline-none"
         >

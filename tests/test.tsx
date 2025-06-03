@@ -5,17 +5,36 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Input from "@/components/input";
 import Links from "@/components/links";
-import { render, screen } from "@testing-library/react-native";
+import List from "@/components/list";
+import MobileMenu from "@/components/mobile-menu";
+import { fireEvent, render, screen } from "@testing-library/react-native";
 
 describe("Header", () => {
-  beforeEach(() => {
-    render(<Header setOpenMenu={() => {}} openMenu tablet />);
+  it("checks the menu button can be pressed", () => {
+    const mockPress = jest.fn();
+    const { getByTestId } = render(
+      <Header setOpenMenu={mockPress} openMenu tablet={false} />,
+    );
+    fireEvent.press(getByTestId("header-button"));
+    expect(mockPress).toHaveBeenCalled();
   });
 
   it("Checks the header links", () => {
+    render(<Header setOpenMenu={() => {}} openMenu tablet />);
     expect(screen.getByText("Features")).toBeVisible();
     expect(screen.getByText("Pricing")).toBeVisible();
     expect(screen.getByText("Resources")).toBeVisible();
+  });
+});
+
+describe("Mobile menu", () => {
+  it("checks the mobile menu links are visible", () => {
+    render(<MobileMenu />);
+    expect(screen.getByText("Features")).toBeVisible();
+    expect(screen.getByText("Pricing")).toBeVisible();
+    expect(screen.getByText("Resources")).toBeVisible();
+    expect(screen.getByText("Login")).toBeVisible();
+    expect(screen.getByText("Sign Up")).toBeVisible();
   });
 });
 
@@ -56,6 +75,22 @@ describe("Input", () => {
     );
     expect(screen.getByPlaceholderText("Shorten a link here...")).toBeTruthy();
   });
+
+  it("checks the button is pressed", () => {
+    const mockPress = jest.fn();
+    const { getByTestId } = render(
+      <Input
+        input=""
+        setInput={() => {}}
+        onPress={mockPress}
+        onBlur={() => {}}
+        tablet={false}
+        error={{ state: false, message: "" }}
+      />,
+    );
+    fireEvent.press(getByTestId("input-button"));
+    expect(mockPress).toHaveBeenCalled();
+  });
 });
 
 describe("Advanced", () => {
@@ -72,6 +107,39 @@ describe("Advanced", () => {
       screen.getByText(`
        Track how your links are performing across the web with our advanced
           statistics dashboard.
+      `),
+    ).toBeVisible();
+  });
+});
+
+describe("List", () => {
+  beforeEach(() => {
+    render(<List />);
+  });
+
+  it("checks the List item titles are visible", () => {
+    expect(screen.getByText("Brand Recognition")).toBeVisible();
+    expect(screen.getByText("Detailed Records")).toBeVisible();
+    expect(screen.getByText("Fully Customizable")).toBeVisible();
+  });
+
+  it("checks the list item paragraphs are visible", () => {
+    expect(
+      screen.getByText(`
+      Boost your brand recognition with each click. Generic links don’t 
+  mean a thing. Branded links help instil confidence in your content.
+      `),
+    ).toBeVisible();
+    expect(
+      screen.getByText(`
+     Gain insights into who is clicking your links. Knowing when and where 
+  people engage with your content helps inform better decisions.
+      `),
+    ).toBeVisible();
+    expect(
+      screen.getByText(`
+      Improve brand awareness and content discoverability through customizable 
+  links, supercharging audience engagement.
       `),
     ).toBeVisible();
   });

@@ -6,18 +6,23 @@ type Props = {
   onPress?: () => void;
   children: ReactNode;
   className: string;
+  testID: string;
 };
 
-const AriaButton = ({ onPress, children, className }: Props) => {
+const AriaButton = ({ onPress, children, className, testID }: Props) => {
   if (Platform.OS === "web") {
     return (
-      <Button onClick={onPress} className={className}>
+      <Button data-testid={testID} onClick={onPress} className={className}>
         {children}
       </Button>
     );
   }
 
-  return <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>;
+  return (
+    <TouchableOpacity testID={testID} onPress={onPress}>
+      {children}
+    </TouchableOpacity>
+  );
 };
 
 export default AriaButton;

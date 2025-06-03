@@ -34,12 +34,11 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
               />
               <View className="overflow-hidden rounded-lg bg-white">
                 <AriaButton
+                  testID="input-button"
                   onPress={onPress}
-                  className="flex w-40 flex-1 items-center justify-center rounded-md bg-cyan p-0 transition-opacity duration-300 ease-in-out hover:opacity-60"
+                  className="flex w-40 flex-1 items-center justify-center rounded-md bg-cyan p-0 font-poppins text-lg font-bold text-white transition-opacity duration-300 ease-in-out hover:opacity-60"
                 >
-                  <Text className="font-poppins text-lg font-bold text-white">
-                    Shorten It!
-                  </Text>
+                  Shorten It!
                 </AriaButton>
               </View>
             </View>
@@ -78,12 +77,11 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
           </View>
           <View className="overflow-hidden rounded-lg bg-white">
             <AriaButton
+              testID="input-button"
               onPress={onPress}
-              className="flex flex-1 items-center justify-center rounded-sm bg-cyan p-3 transition-opacity duration-300 ease-in-out hover:opacity-60"
+              className="flex flex-1 items-center justify-center rounded-sm bg-cyan p-3 font-poppins text-lg font-bold text-white transition-opacity duration-300 ease-in-out hover:opacity-60"
             >
-              <Text className="font-poppins text-lg font-bold text-white">
-                Shorten It!
-              </Text>
+              Shorten It!
             </AriaButton>
           </View>
         </View>
