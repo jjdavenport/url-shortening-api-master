@@ -5,7 +5,7 @@ const useAPI = () => {
   const [urls, setUrls] = useState([]);
   const [error, setError] = useState({
     state: false,
-    message: "Cannot be empty",
+    message: "",
   });
 
   const handleBlur = () => {

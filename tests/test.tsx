@@ -7,6 +7,7 @@ import Input from "@/components/input";
 import Links from "@/components/links";
 import List from "@/components/list";
 import MobileMenu from "@/components/mobile-menu";
+import useAPI from "@/hooks/api-context";
 import { fireEvent, render, screen } from "@testing-library/react-native";
 
 describe("Header", () => {
@@ -62,6 +63,20 @@ describe("Content", () => {
 });
 
 describe("Input", () => {
+  function TestInput() {
+    const { input, setInput, handlePress, handleBlur, error } = useAPI();
+    return (
+      <Input
+        input={input}
+        setInput={setInput}
+        onPress={handlePress}
+        onBlur={handleBlur}
+        tablet={false}
+        error={error}
+      />
+    );
+  }
+
   it("Checks the Input placeholder text", () => {
     render(
       <Input
@@ -90,6 +105,37 @@ describe("Input", () => {
     );
     fireEvent.press(getByTestId("input-button"));
     expect(mockPress).toHaveBeenCalled();
+  });
+
+  it("checks the error message when the input is empty and the button is pressed", () => {
+    const { getByTestId, getByText } = render(<TestInput />);
+    fireEvent.press(getByTestId("input-button"));
+    expect(getByText("Please add a link")).toBeVisible();
+  });
+
+  it("checks the error message when the input is invalid and the button is pressed", () => {
+    const { getByTestId, getByText, getByPlaceholderText } = render(
+      <TestInput />,
+    );
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "abc");
+    fireEvent.press(getByTestId("input-button"));
+    expect(getByText("Invalid URL")).toBeVisible();
+  });
+
+  it("checks the error message when the input is empty and blurred", () => {
+    const { getByText, getByPlaceholderText } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent(input, "blur");
+    expect(getByText("Please add a link")).toBeVisible();
+  });
+
+  it("checks the error message when the input is invalid and blurred", () => {
+    const { getByText, getByPlaceholderText } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "abc");
+    fireEvent(input, "blur");
+    expect(getByText("Invalid URL")).toBeVisible();
   });
 });
 
