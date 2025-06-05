@@ -19,7 +19,7 @@ const AriaButton = ({ onPress, children, className, testID }: Props) => {
   }
 
   return (
-    <TouchableOpacity testID={testID} onPress={onPress}>
+    <TouchableOpacity className={className} testID={testID} onPress={onPress}>
       {children}
     </TouchableOpacity>
   );

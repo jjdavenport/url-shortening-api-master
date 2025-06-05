@@ -10,7 +10,6 @@ const useAPI = () => {
 
   const handleBlur = () => {
     if (input === "") {
-      console.log(input);
       setError((prev) => ({
         ...prev,
         state: true,
@@ -29,7 +28,6 @@ const useAPI = () => {
 
   const handlePress = () => {
     if (input === "") {
-      console.log(input);
       setError((prev) => ({
         ...prev,
         state: true,

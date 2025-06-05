@@ -8,7 +8,12 @@ import Links from "@/components/links";
 import List from "@/components/list";
 import MobileMenu from "@/components/mobile-menu";
 import useAPI from "@/hooks/api-context";
-import { fireEvent, render, screen } from "@testing-library/react-native";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react-native";
 
 describe("Header", () => {
   it("checks the menu button can be pressed", () => {
@@ -77,7 +82,7 @@ describe("Input", () => {
     );
   }
 
-  it("Checks the Input placeholder text", () => {
+  it("Checks the input placeholder text", () => {
     render(
       <Input
         input=""
@@ -120,14 +125,18 @@ describe("Input", () => {
     const input = getByPlaceholderText("Shorten a link here...");
     fireEvent.changeText(input, "abc");
     fireEvent.press(getByTestId("input-button"));
-    expect(getByText("Invalid URL")).toBeVisible();
+    const errorText = getByText("Invalid URL");
+    expect(errorText).toBeVisible();
+    expect(errorText.props.className).toContain("text-red");
   });
 
   it("checks the error message when the input is empty and blurred", () => {
     const { getByText, getByPlaceholderText } = render(<TestInput />);
     const input = getByPlaceholderText("Shorten a link here...");
     fireEvent(input, "blur");
-    expect(getByText("Please add a link")).toBeVisible();
+    const errorText = getByText("Please add a link");
+    expect(errorText).toBeVisible();
+    expect(errorText.props.className).toContain("text-red");
   });
 
   it("checks the error message when the input is invalid and blurred", () => {
@@ -135,7 +144,78 @@ describe("Input", () => {
     const input = getByPlaceholderText("Shorten a link here...");
     fireEvent.changeText(input, "abc");
     fireEvent(input, "blur");
-    expect(getByText("Invalid URL")).toBeVisible();
+    const errorText = getByText("Invalid URL");
+    expect(errorText).toBeVisible();
+    expect(errorText.props.className).toContain("text-red");
+  });
+
+  it("checks the input outline style if input is empty and the button is pressed", () => {
+    const { getByPlaceholderText, getByTestId } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.press(getByTestId("input-button"));
+    expect(input.props.className).toContain(
+      "outline outline-red placeholder:text-red",
+    );
+  });
+
+  it("checks the input outline style if input is invalid and the button is pressed", () => {
+    const { getByPlaceholderText, getByTestId } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "abc");
+    fireEvent.press(getByTestId("input-button"));
+    expect(input.props.className).toContain(
+      "outline outline-red placeholder:text-red",
+    );
+  });
+
+  it("checks the error styles are not applied if the input is valid and blurred", async () => {
+    const { getByPlaceholderText } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "google.com");
+    fireEvent(input, "blur");
+    await waitFor(() => {
+      expect(input.props.className).toContain("outline-none");
+      expect(input.props.className).not.toContain(
+        "outline-red outline placeholder:text-red",
+      );
+    });
+  });
+
+  it("checks the error styles are not applied if the input is valid and the buttons has been pressed", async () => {
+    const { getByPlaceholderText, getByTestId } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "google.com");
+    fireEvent.press(getByTestId("input-button"));
+    await waitFor(() => {
+      expect(input.props.className).toContain("outline-none");
+      expect(input.props.className).not.toContain(
+        "outline-red outline placeholder:text-red",
+      );
+    });
+  });
+
+  it("checks no error text is visible if the input is valid and blurred", async () => {
+    const { queryByText, getByPlaceholderText } = render(<TestInput />);
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "google.com");
+    fireEvent(input, "blur");
+    await waitFor(() => {
+      expect(queryByText("Please add a link")).not.toBeVisible();
+      expect(queryByText("Invalid URL")).not.toBeVisible();
+    });
+  });
+
+  it("checks no error text is visible if the input is valid and button pressed", async () => {
+    const { getByPlaceholderText, queryByText, queryByTestId } = render(
+      <TestInput />,
+    );
+    const input = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(input, "google.com");
+    fireEvent.press(queryByTestId("input-button"));
+    await waitFor(() => {
+      expect(queryByText("Please add a link")).not.toBeVisible();
+      expect(queryByText("Invalid URL")).not.toBeVisible();
+    });
   });
 });
 
@@ -144,11 +224,11 @@ describe("Advanced", () => {
     render(<Advanced />);
   });
 
-  it("Checks the title", () => {
+  it("Checks the title is visible", () => {
     expect(screen.getByText("Advanced Statistics")).toBeVisible();
   });
 
-  it("Checks the paragraph", () => {
+  it("Checks the paragraph is visible", () => {
     expect(
       screen.getByText(`
        Track how your links are performing across the web with our advanced
@@ -196,11 +276,11 @@ describe("Boost", () => {
     render(<Boost tablet />);
   });
 
-  it("checks the title", () => {
+  it("checks the title is visible", () => {
     expect(screen.getByText("Boost your links today")).toBeVisible();
   });
 
-  it("checks the button", () => {
+  it("checks the button is visible", () => {
     expect(screen.getByText("Get Started")).toBeVisible();
   });
 });
