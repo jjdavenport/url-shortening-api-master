@@ -64,7 +64,10 @@
     "typescript": "~5.8.3"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./tests/jestSetup.ts"
+    ]
   },
   "private": true
 }

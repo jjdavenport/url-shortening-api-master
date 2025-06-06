@@ -7,7 +7,9 @@ import Input from "@/components/input";
 import Links from "@/components/links";
 import List from "@/components/list";
 import MobileMenu from "@/components/mobile-menu";
+import Url from "@/components/url";
 import useAPI from "@/hooks/api-context";
+import Clipboard from "@react-native-clipboard/clipboard";
 import {
   fireEvent,
   render,
@@ -216,6 +218,55 @@ describe("Input", () => {
       expect(queryByText("Please add a link")).not.toBeVisible();
       expect(queryByText("Invalid URL")).not.toBeVisible();
     });
+  });
+});
+
+describe("URLs", () => {
+  it("Checks the longURL matches the input", () => {
+    const mockInput = "google.com";
+    const { getByTestId } = render(
+      <>
+        <Input
+          input={mockInput}
+          setInput={() => {}}
+          onBlur={() => {}}
+          tablet={false}
+          onPress={() => {}}
+          error={{ state: false, message: "" }}
+        />
+        <Url shortUrl="" longUrl={mockInput} />
+      </>,
+    );
+    expect(getByTestId("long-url").props.children).toContain("google.com");
+  });
+
+  it("checks the shortURL has accessible styles", () => {
+    const { getByText } = render(<Url shortUrl="google.com" longUrl="" />);
+    const shortURL = getByText("google.com");
+    expect(shortURL.props.className).toContain("hover:underline");
+  });
+
+  it("checks the button is pressable", () => {
+    const mockPress = jest.fn();
+    const { getByTestId } = render(
+      <Url longUrl="" shortUrl="" test={mockPress} />,
+    );
+    fireEvent.press(getByTestId("url-button"));
+    expect(mockPress).toHaveBeenCalled();
+  });
+
+  it("checks the button text when the button is pressed", () => {
+    const { getByTestId, getByText } = render(
+      <Url shortUrl="google.com" longUrl="" />,
+    );
+    fireEvent.press(getByTestId("url-button"));
+    expect(getByText("Copied!")).toBeTruthy();
+  });
+
+  it("checks that the short url is copied to keyboard", async () => {
+    const { getByTestId } = render(<Url longUrl="" shortUrl="google.com" />);
+    fireEvent.press(getByTestId("url-button"));
+    expect(Clipboard.setString).toHaveBeenCalledWith("google.com");
   });
 });
 
