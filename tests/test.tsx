@@ -8,6 +8,7 @@ import Links from "@/components/links";
 import List from "@/components/list";
 import MobileMenu from "@/components/mobile-menu";
 import Url from "@/components/url";
+import UrlsList from "@/components/urls-list";
 import useAPI from "@/hooks/api-context";
 import Clipboard from "@react-native-clipboard/clipboard";
 import {
@@ -217,6 +218,37 @@ describe("Input", () => {
     await waitFor(() => {
       expect(queryByText("Please add a link")).not.toBeVisible();
       expect(queryByText("Invalid URL")).not.toBeVisible();
+    });
+  });
+});
+
+describe("API", () => {
+  const TestComponents = () => {
+    const { error, handleBlur, setInput, urls, input, handlePress } = useAPI();
+    return (
+      <>
+        <Input
+          input={input}
+          setInput={setInput}
+          onBlur={handleBlur}
+          tablet={false}
+          onPress={handlePress}
+          error={error}
+        />
+        <UrlsList data={urls} />
+      </>
+    );
+  };
+
+  it("Checks the fetch function returns an short url", async () => {
+    const { getByTestId, getByPlaceholderText } = render(<TestComponents />);
+    const inputElement = getByPlaceholderText("Shorten a link here...");
+    fireEvent.changeText(inputElement, "google.com");
+    fireEvent.press(getByTestId("input-button"));
+    await waitFor(() => {
+      expect(getByTestId("short-url").props.children).toContain(
+        "https://is.gd",
+      );
     });
   });
 });

@@ -2,7 +2,7 @@ import { View } from "react-native";
 import Url from "./url";
 
 type Prop = {
-  data: string[];
+  data: { shortUrl: string; longUrl: string }[];
 };
 
 const UrlsList = ({ data }: Prop) => {
