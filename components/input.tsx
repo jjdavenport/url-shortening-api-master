@@ -29,7 +29,7 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
                 onBlur={onBlur}
                 value={input}
                 onChangeText={setInput}
-                className={`${error.state ? "outline outline-red placeholder:text-red placeholder:opacity-60 focus:outline-[3px] focus:outline-red" : "outline-none placeholder:text-grayishViolet"} z-10 w-full cursor-pointer rounded-md bg-white p-3 font-poppins text-lg font-medium`}
+                className={`${error.state ? "outline outline-[3px] outline-red placeholder:text-red placeholder:opacity-60 focus:outline focus:outline-[3px] focus:outline-red" : "outline-none placeholder:text-grayishViolet"} z-10 w-full cursor-pointer rounded-md bg-white p-3 font-poppins text-lg font-medium`}
                 placeholder="Shorten a link here..."
               />
               <View className="overflow-hidden rounded-lg bg-white">
@@ -66,14 +66,16 @@ const Input = ({ input, setInput, onPress, onBlur, tablet, error }: Props) => {
               onBlur={onBlur}
               value={input}
               onChangeText={setInput}
-              className={`${error.state ? "outline outline-red placeholder:text-red placeholder:opacity-60 focus:outline-[3px] focus:outline-red" : "outline-none placeholder:text-grayishViolet"} z-10 w-full cursor-pointer rounded-sm bg-white p-3 font-poppins text-lg font-medium`}
+              className={`${error.state ? "outline outline-[3px] outline-red placeholder:text-red placeholder:opacity-60 focus:outline focus:outline-[3px] focus:outline-red" : "outline-none placeholder:text-grayishViolet"} z-10 w-full cursor-pointer rounded-sm bg-white p-3 font-poppins text-lg font-medium`}
               placeholder="Shorten a link here..."
             />
-            {error.state && (
-              <Text className="font-poppins text-xs font-medium italic text-red">
-                {error.message}
-              </Text>
-            )}
+            <View className="h-2">
+              {error.state && (
+                <Text className="font-poppins text-xs font-medium italic text-red">
+                  {error.message}
+                </Text>
+              )}
+            </View>
           </View>
           <View className="overflow-hidden rounded-lg bg-white">
             <AriaButton
