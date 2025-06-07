@@ -156,8 +156,9 @@ describe("Input", () => {
     const { getByPlaceholderText, getByTestId } = render(<TestInput />);
     const input = getByPlaceholderText("Shorten a link here...");
     fireEvent.press(getByTestId("input-button"));
+    expect(input.props.className).not.toContain("outline-none");
     expect(input.props.className).toContain(
-      "outline outline-red placeholder:text-red",
+      "outline outline-[3px] outline-red placeholder:text-red placeholder:opacity-60 focus:outline focus:outline-[3px] focus:outline-red",
     );
   });
 
@@ -166,8 +167,9 @@ describe("Input", () => {
     const input = getByPlaceholderText("Shorten a link here...");
     fireEvent.changeText(input, "abc");
     fireEvent.press(getByTestId("input-button"));
+    expect(input.props.className).not.toContain("outline-none");
     expect(input.props.className).toContain(
-      "outline outline-red placeholder:text-red",
+      "outline outline-[3px] outline-red placeholder:text-red placeholder:opacity-60 focus:outline focus:outline-[3px] focus:outline-red",
     );
   });
 

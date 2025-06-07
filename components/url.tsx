@@ -44,10 +44,12 @@ const Url = ({ longUrl, shortUrl, test }: Props) => {
             </Link>
             <AriaButton
               testID="url-button"
-              className={`${button === "Copy" ? "bg-cyan hover:opacity-60" : "bg-darkViolet"} rounded-md py-2 font-poppins text-lg font-bold text-white transition-all duration-75 ease-in-out md:w-36`}
+              className={`${button === "Copy" ? "bg-cyan hover:opacity-60" : "bg-darkViolet"} rounded-md py-2 transition-all duration-75 ease-in-out md:w-36`}
               onPress={handleTest}
             >
-              <Text>{button}</Text>
+              <Text className="font-poppins text-lg font-bold text-white">
+                {button}
+              </Text>
             </AriaButton>
           </View>
         </View>
